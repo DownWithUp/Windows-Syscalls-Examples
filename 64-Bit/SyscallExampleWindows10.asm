@@ -13,7 +13,7 @@ section '.text' code readable writable executable
 start:
         sub rsp, 8 ;Align stack
         invoke CreateProcess, szName, NULL, NULL, NULL, FALSE, 0, NULL, NULL, sInfo, pInfo
-        invoke Sleep, 2000d;Sleep so you can see notepad, then see it be terminated
+        invoke Sleep, 2000d ;Sleep so you can see notepad, then see it be terminated
         invoke OpenProcess, PROCESS_ALL_ACCESS, FALSE, [pInfo.dwProcessId]
 
         mov r10, rax ;1st parameter, r10 must contain first parameter
